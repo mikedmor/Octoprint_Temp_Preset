@@ -3,13 +3,14 @@
     <h1>Temperature Profiles</h1>
     <div data-bind="foreach: temppreset_profiles">
         <div>
-            <span data-bind="text: name">Default (before bind)</span>
+            <span data-bind="text: name" style="font-size: 15px;">Default (before bind)</span>
             <div style="float:right">
-                <button class="btn control-box" data-bind="click: $parent.loadBoth">Apply Both</button>
-                <button class="btn control-box" data-bind="click: $parent.loadTool">Apply Tool</button>
-                <button class="btn control-box" data-bind="click: $parent.loadBed">Apply Bed</button>
+                <button class="btn control-box" data-bind="click: $parent.loadBoth, text: { 'Both (' + tool_temp + '/' + bed_temp + ')' }">Both</button>
+                <button class="btn control-box" data-bind="click: $parent.loadTool, text: { 'Tool (' + tool_temp + ')' }">Tool</button>
+                <button class="btn control-box" data-bind="click: $parent.loadBed, text: { 'Bed (' + bed_temp + ')' }">Bed</button>
             </div>
         </div>
+        <hr style="margin: 5px">
     </div>
 </div>
 <!-- /ko -->

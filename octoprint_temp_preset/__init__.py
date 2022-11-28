@@ -54,8 +54,8 @@ class TempPresetPlugin(octoprint.plugin.StartupPlugin,
         data = []
         for index, profile in enumerate(self._settings.get(['temppreset_profiles'])):
             data.append({'name': profile['name'],
-                        'tool_temp': profile['tool'],
-                        'bed_temp': profile['bed']})
+                        'tool_temp': profile['tool_temp'],
+                        'bed_temp': profile['bed_temp']})
         return data
 
     ##~~ Softwareupdate hook
