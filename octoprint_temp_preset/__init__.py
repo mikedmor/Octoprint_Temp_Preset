@@ -44,7 +44,7 @@ class TempPresetPlugin(octoprint.plugin.StartupPlugin,
 
     def get_template_configs(self):
         return [
-            dict(type="settings", custom_bindings=True),
+            dict(type="settings", template="temppreset_settings.jinja2", custom_bindings=True),
             dict(type="generic", template="temppreset.jinja2", custom_bindings=True)
         ]
 
