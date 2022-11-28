@@ -8,14 +8,14 @@
     </div>
     <div data-bind="foreach: settings.settings.plugins.temp_preset.temppreset_profiles">
         <div class="row-fluid" style="margin-bottom: 5px">
-            <div class="span2" style="margin-left">
+            <div class="span3" style="margin-left">
                 <input type="text" class="span12 text-right" data-bind="value: name">
             </div>
-            <div class="input-append span2">
+            <div class="input-append span4">
                 <input type="number" class="span12 text-right" data-bind="value: tool_temp">
             </div>
 
-            <div class="input-append span2">
+            <div class="input-append span4">
                 <input type="number" class="span12 text-right" data-bind="value: bed_temp">
             </div>
 
@@ -23,12 +23,10 @@
                 <button title="Remove Profile" class="btn btn-danger" data-bind="click: $parent.removeTempPresetProfile, attr: { 'title': 'Remove Profile' }"><i class="fa fa-trash-o"></i></button>
             </div>
         </div>
-
-
     </div>
     <div class="row-fluid">
-        <div class="offset10 span2">
-            <button title="Add Profile" class="btn btn-primary" data-bind="click: $parent.addTempPresetProfile"><i class="fa fa-plus"></i></button>
+        <div class="offset11 span1">
+            <button title="Add Profile" class="btn btn-primary" data-bind="click: addTempPresetProfile"><i class="fa fa-plus"></i></button>
         </div>
     </div>
 </form>

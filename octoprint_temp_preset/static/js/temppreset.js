@@ -19,8 +19,8 @@ $(function() {
         self.addTempPresetProfile = function() {
             self.settings.settings.plugins.temp_preset.temppreset_profiles.push({
                 name: ko.observable('Temp '+self.temppreset_profiles().length),
-                tool_temp: ko.observable(false),
-                bed_temp: ko.observable(false)});
+                tool_temp: ko.observable('200'),
+                bed_temp: ko.observable('60')});
             self.temppreset_profiles(self.settings.settings.plugins.temp_preset.temppreset_profiles());
         };
 
