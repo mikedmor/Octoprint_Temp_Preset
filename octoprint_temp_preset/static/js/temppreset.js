@@ -29,6 +29,18 @@ $(function() {
             self.temppreset_profiles(self.settings.settings.plugins.temp_preset.temppreset_profiles());
         };
 
+        self.loadBoth = function(profile, event) {
+            console.log("Loading Both: "+ko.toJS(profile).tool_temp+","+ko.toJS(profile).bed_temp);
+        }
+
+        self.loadTool = function(profile, event) {
+            console.log("Loading Tool: "+ko.toJS(profile).tool_temp);
+        }
+
+        self.loadBed = function(profile, event) {
+            console.log("Loading Bed: "+ko.toJS(profile).bed_temp);
+        }
+
         self.loadTempuratureProfile = function(profile, event) {
             // Set webcam observables to selected webcam
             //self.settings.webcam_streamUrl(ko.toJS(profile).URL);
