@@ -31,14 +31,34 @@ $(function() {
 
         self.loadBoth = function(profile, event) {
             console.log("Loading Both: "+ko.toJS(profile).tool_temp+","+ko.toJS(profile).bed_temp);
+            if($('#temperature-table > tbody > tr:nth-child(2) > td.temperature_target > form > div.input-prepend.input-append > input').prop('disabled')){
+                alert("Tool is currently disabled! Are you connected to the printer?");
+            }else{
+                $('#temperature-table > tbody > tr:nth-child(2) > td.temperature_target > form > div.input-prepend.input-append > input').val(ko.toJS(profile).tool_temp);
+                $('#temperature-table > tbody > tr:nth-child(2) > td.temperature_target > form > div.btn-group > button:nth-child(1)').click();
+                $('#temperature-table > tbody > tr:nth-child(3) > td.temperature_target > form > div.input-prepend.input-append > input').val(ko.toJS(profile).bed_temp);
+                $('#temperature-table > tbody > tr:nth-child(3) > td.temperature_target > form > div.btn-group > button:nth-child(1)').click();
+            }
         }
 
         self.loadTool = function(profile, event) {
             console.log("Loading Tool: "+ko.toJS(profile).tool_temp);
+            if($('#temperature-table > tbody > tr:nth-child(2) > td.temperature_target > form > div.input-prepend.input-append > input').prop('disabled')){
+                alert("Tool is currently disabled! Are you connected to the printer?");
+            }else{
+                $('#temperature-table > tbody > tr:nth-child(2) > td.temperature_target > form > div.input-prepend.input-append > input').val(ko.toJS(profile).tool_temp);
+                $('#temperature-table > tbody > tr:nth-child(2) > td.temperature_target > form > div.btn-group > button:nth-child(1)').click();
+            }
         }
 
         self.loadBed = function(profile, event) {
             console.log("Loading Bed: "+ko.toJS(profile).bed_temp);
+            if($('#temperature-table > tbody > tr:nth-child(3) > td.temperature_target > form > div.input-prepend.input-append > input').prop('disabled')){
+                alert("Bed is currently disabled! Are you connected to the printer?");
+            }else{
+                $('#temperature-table > tbody > tr:nth-child(3) > td.temperature_target > form > div.input-prepend.input-append > input').val(ko.toJS(profile).bed_temp);
+                $('#temperature-table > tbody > tr:nth-child(3) > td.temperature_target > form > div.btn-group > button:nth-child(1)').click();
+            }
         }
 
         self.loadTempuratureProfile = function(profile, event) {
