@@ -6,26 +6,17 @@ $(function() {
         self.settings = parameters[0];
         self.control = parameters[1];
 
-        self.multicam_profiles = ko.observableArray();
-        self.enabled_buttons = ko.observableArray();
-
-        self.selectedPreviewProfileIndex = ko.observable();
+        self.temppreset_profiles = ko.observableArray();
 
         self.onBeforeBinding = function() {
             self.temppreset_profiles(self.settings.settings.plugins.temppreset.temppreset_profiles());
-        };
-
-        self.onSettingsShown = function() {
-            // Force default webcam in settings to avoid confusion
-            let preSelectedProfile = 0;
-            self.selectedPreviewProfileIndex(preSelectedProfile);
         };
 
         self.onEventSettingsUpdated = function(payload) {
             self.temppreset_profiles(self.settings.settings.plugins.temppreset.temppreset_profiles());
         };
 
-        self.temppreset_profiles = function() {
+        self.addTempPresetProfile = function() {
             self.settings.settings.plugins.temppreset.temppreset_profiles.push({
                 name: ko.observable('Temp '+self.temppreset_profiles().length),
                 tool_temp: ko.observable(false),
