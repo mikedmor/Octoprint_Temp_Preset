@@ -79,7 +79,7 @@ class TempPresetPlugin(octoprint.plugin.StartupPlugin,
             )
         )
 
-__plugin_name__ = "Temp_Preset"
+__plugin_name__ = "Temperature Preset"
 __plugin_pythoncompat__ = ">=2.7,<4"
 
 def __plugin_load__():

@@ -25,7 +25,7 @@ $(function() {
             self.temppreset_profiles(self.settings.settings.plugins.temppreset.temppreset_profiles());
         };
 
-        self.addTempPresetProfile = function() {
+        self.temppreset_profiles = function() {
             self.settings.settings.plugins.temppreset.temppreset_profiles.push({
                 name: ko.observable('Temp '+self.temppreset_profiles().length),
                 tool_temp: ko.observable(false),
